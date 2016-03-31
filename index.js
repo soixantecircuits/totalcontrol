@@ -65,7 +65,12 @@ function checkIntegretity(data) {
 }
 
 function updateActiveSocket(data) {
-  activeSocket.push(data)
+  var index = _.findIndex(activeSocket, { 'name': data.name })
+  if (index > 0) {
+    activeSocket[index] = data
+  } else {
+    activeSocket.push(data)
+  }
 }
 
 server.listen(8080)
