@@ -1,0 +1,12 @@
+<ul>
+  {{#each sockets}}
+  <li>
+  <h2>By {{name}}</h2>
+    <ul>
+      {{#each commands}}
+        <li>{{name}} | <button data-name={{../name}} data-command="{{name}}">trigger</button></li>
+      {{/each}}
+    </ul>
+  </li>
+  {{/each}}
+</ul>
